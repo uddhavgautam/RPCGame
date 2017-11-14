@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpcgame;
+package com.upgautam.uddhav.rpsgame;
 
 /**
  * A model class which represents one of rock-paper-scissors hands.

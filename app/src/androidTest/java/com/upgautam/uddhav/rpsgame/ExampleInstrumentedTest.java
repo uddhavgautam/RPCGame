@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpcgame;
+package com.upgautam.uddhav.rpsgame;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.upgautam.uddhav.rpcgame", appContext.getPackageName());
+        assertEquals("com.upgautam.uddhav.rpsgame", appContext.getPackageName());
     }
 }

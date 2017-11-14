@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.upgautam.uddhav.rpcgame"
+        applicationId "com.upgautam.uddhav.rpsgame"
         minSdkVersion 22
         targetSdkVersion 26
         versionCode 1

@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpcgame;
+package com.upgautam.uddhav.rpsgame;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpcgame;
+package com.upgautam.uddhav.rpsgame;
 
 import android.content.Context;
 import android.util.AttributeSet;

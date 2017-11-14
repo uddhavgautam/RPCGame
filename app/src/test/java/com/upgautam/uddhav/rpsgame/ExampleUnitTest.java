@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpcgame;
+package com.upgautam.uddhav.rpsgame;
 
 import org.junit.Test;
 

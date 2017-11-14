@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpcgame;
+package com.upgautam.uddhav.rpsgame;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -66,17 +66,18 @@ public class RockPaperScissorsFragment extends Fragment {
                 getOpponentHand();
                 int result = button.getHand().compareTo(opponentHand);
 
-                TextView resultTextView = ((TextView) getActivity().findViewById(R.id.text_view));
+                TextView resultTextView = getActivity().findViewById(R.id.text_view);
+                CharSequence mText = resultTextView.getText();
                 if (result < 0) {
-                    resultTextView.setText(resultTextView.getText() + "LOSE"
+                    resultTextView.setText(mText + "LOSE"
                             + "(You: " + button.getHand().toString() + ", Opponent: "
                             + opponentHand.toString() + ")\n");
                 } else if (result > 0) {
-                    resultTextView.setText(resultTextView.getText() + "WIN"
+                    resultTextView.setText(mText + "WIN"
                             + "(You: " + button.getHand().toString() + ", Opponent: "
                             + opponentHand.toString() + ")\n");
                 } else {
-                    resultTextView.setText(resultTextView.getText() + "DRAW"
+                    resultTextView.setText(mText + "DRAW"
                             + "(You: " + button.getHand().toString() + ", Opponent: "
                             + opponentHand.toString() + ")\n");
                 }
