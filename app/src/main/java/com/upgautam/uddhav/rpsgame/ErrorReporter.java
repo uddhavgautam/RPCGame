@@ -34,7 +34,7 @@ public class ErrorReporter {
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     try {
                         connection.setRequestMethod("POST");
-                    } catch (ProtocolException e1) {
+                    } catch (ProtocolException ignored) {
                     }
                     connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
                     connection.setFixedLengthStreamingMode(jsonObject.toString().getBytes().length);
@@ -48,7 +48,7 @@ public class ErrorReporter {
                     outputStream.close();
 
                     connection.disconnect();
-                } catch (IOException e) {
+                } catch (IOException ignored) {
                 }
             }
         });

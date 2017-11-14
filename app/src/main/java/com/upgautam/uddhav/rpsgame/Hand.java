@@ -1,5 +1,7 @@
 package com.upgautam.uddhav.rpsgame;
 
+import android.support.annotation.NonNull;
+
 /**
  * A model class which represents one of rock-paper-scissors hands.
  */
@@ -28,7 +30,7 @@ public class Hand implements Comparable<Hand> {
     }
 
     @Override
-    public int compareTo(Hand another) {
+    public int compareTo(@NonNull Hand another) {
         if ((this == ROCK || this == SCISSORS) && (another == ROCK || another == SCISSORS)) {
             return handValue - another.handValue;
         }

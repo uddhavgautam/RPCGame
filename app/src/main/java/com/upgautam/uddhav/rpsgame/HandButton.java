@@ -24,14 +24,16 @@ public abstract class HandButton extends AppCompatButton {
     public HandButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         rest = 10;
-        setText(getHandText() + "\nrest: " + rest);
+        CharSequence mText = getHandText() + "\nrest: " + rest;
+        setText(mText);
     }
 
     /**
      * Updates button text by means of {@link #getHandText()} and the rest count.
      */
     public void updateText() {
-        setText(getHandText() + "\nrest: " + rest);
+        CharSequence mText = getHandText() + "\nrest: " + rest;
+        setText(mText);
     }
 
     public int getRest() {

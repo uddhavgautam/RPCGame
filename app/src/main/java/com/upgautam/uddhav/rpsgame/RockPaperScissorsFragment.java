@@ -67,19 +67,31 @@ public class RockPaperScissorsFragment extends Fragment {
                 int result = button.getHand().compareTo(opponentHand);
 
                 TextView resultTextView = getActivity().findViewById(R.id.text_view);
-                CharSequence mText = resultTextView.getText();
+                CharSequence mText = "";
                 if (result < 0) {
-                    resultTextView.setText(mText + "LOSE"
+
+                    mText = resultTextView.getText() + "LOSE"
                             + "(You: " + button.getHand().toString() + ", Opponent: "
-                            + opponentHand.toString() + ")\n");
+                            + opponentHand.toString() + ")\n";
+
+                    resultTextView.setText(mText);
+
                 } else if (result > 0) {
-                    resultTextView.setText(mText + "WIN"
+
+                    mText = resultTextView.getText() + "WIN"
                             + "(You: " + button.getHand().toString() + ", Opponent: "
-                            + opponentHand.toString() + ")\n");
+                            + opponentHand.toString() + ")\n";
+
+                    resultTextView.setText(mText);
+
                 } else {
-                    resultTextView.setText(mText + "DRAW"
+
+                    mText = resultTextView.getText() + "DRAW"
                             + "(You: " + button.getHand().toString() + ", Opponent: "
-                            + opponentHand.toString() + ")\n");
+                            + opponentHand.toString() + ")\n";
+
+                    resultTextView.setText(mText);
+
                 }
             }
         }
