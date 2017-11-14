@@ -29,9 +29,9 @@ public class RockPaperScissorsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.rockpaperscissors_fragment, container, false);
-        rockButton = (HandButton) fragmentView.findViewById(R.id.rock_button);
-        scissorsButton = (HandButton) fragmentView.findViewById(R.id.scissors_button);
-        paperButton = (HandButton) fragmentView.findViewById(R.id.paper_button);
+        rockButton = fragmentView.findViewById(R.id.rock_button);
+        scissorsButton = fragmentView.findViewById(R.id.scissors_button);
+        paperButton = fragmentView.findViewById(R.id.paper_button);
 
         rockButton.setOnClickListener(new PrsButtonClickListener());
         scissorsButton.setOnClickListener(new PrsButtonClickListener());

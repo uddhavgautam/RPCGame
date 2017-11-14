@@ -1,14 +1,14 @@
 package com.upgautam.uddhav.rpcgame;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
-import android.widget.Button;
 
 /**
- * A {@link Button} to play a hand. For each hand, a user can play 10 times at most.
+ * A {@link AppCompatButton} to play a hand. For each hand, a user can play 10 times at most.
  * This also controls a playable count left.
  */
-public abstract class HandButton extends Button {
+public abstract class HandButton extends AppCompatButton {
 
     /**
      * Playable count for this hand.
