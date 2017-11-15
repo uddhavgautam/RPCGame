@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpsgame;
+package com.upgautam.uddhav.rpsgame.uicontrollers;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -22,7 +22,7 @@ public class PaperButton extends HandButton {
     }
 
     @Override
-    Hand getHand() {
+    public Hand getHand() {
         return Hand.PAPER;
     }
 }

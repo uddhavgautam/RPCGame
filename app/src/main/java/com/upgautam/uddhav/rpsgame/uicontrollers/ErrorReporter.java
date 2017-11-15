@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpsgame;
+package com.upgautam.uddhav.rpsgame.uicontrollers;
 
 import android.os.Handler;
 
@@ -21,6 +21,8 @@ public class ErrorReporter {
      * Reports a given exception, which happens while getting an opponent hand.
      */
     public static void report(final IOException e) {
+
+
         HANDLER.post(new Runnable() {
             @Override
             public void run() {

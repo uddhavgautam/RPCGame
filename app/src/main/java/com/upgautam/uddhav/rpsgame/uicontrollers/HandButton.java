@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpsgame;
+package com.upgautam.uddhav.rpsgame.uicontrollers;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
@@ -49,5 +49,5 @@ public abstract class HandButton extends AppCompatButton {
      */
     abstract String getHandText();
 
-    abstract Hand getHand();
+    public abstract Hand getHand();
 }

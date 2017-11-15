@@ -1,4 +1,4 @@
-package com.upgautam.uddhav.rpsgame;
+package com.upgautam.uddhav.rpsgame.uicontrollers;
 
 import android.support.annotation.NonNull;
 

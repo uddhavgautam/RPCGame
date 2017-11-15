@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">RPCGame</string>
+    <string name="app_name">RPS Game</string>
+    <string name="title_activity_navigation_drawer">RPS Game</string>
 </resources>
