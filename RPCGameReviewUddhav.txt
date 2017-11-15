@@ -1,0 +1,131 @@
+​Hand.java, 3: <Your comment for line 3>
+Hand.java, 15: <Your comment for line 15>
+
+AndroidManifest.xml, 5: <added  "<uses-permission android:name="android.permission.INTERNET" />" >
+AndroidManifest.xml, 6: <added  "<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />" >
+AndroidManifest.xml, 11: <added  "android:label="@string/app_name" >
+AndroidManifest.xml, 17 to 26: <added  "<activity
+            android:name=".uicontrollers.activity.RockPaperScissorsActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>" >
+		
+
+
+build.gradle (project level), 23 to 23: <added  "//retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'" >
+	
+
+RockPaperScissorsFragment.java, 39 to 40: <added  "// avoid creating several instances, should be singleton OkHttpClient
+    OkHttpClient client = new OkHttpClient();" >
+	
+RockPaperScissorsFragment.java: < onCreateView() method block is pulled on the top and the inner class PrsButtonClickListener pulled down
+. This is done using Rearrange tool of Android Studio. >
+
+RockPaperScissorsFragment.java: < removed all (TextView> type unnecessary typecasting >
+
+
+RockPaperScissorsFragment.java, 146 to 155:  < used like below snippet ways instead of putting getText() method inside setText() method>
+				CharSequence mText = "";
+                if (result < 0) {
+
+                    mText = resultTextView.getText() + "LOSE"
+                            + "(You: " + button.getHand().toString() + ", Opponent: "
+                            + opponentHand.toString() + ")\n";
+
+                    resultTextView.setText(mText);
+					
+					
+RockPaperScissorsFragment.java, 55 to 103:  < created separate getOpponentHand() method as below >
+
+		public void getOpponentHand() {
+
+        //default method is GET
+        Request request = new Request.Builder()
+                .url("http://example.com/randhand")
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    //connection failed
+                    //provide random response {0, 1, 2} yourself using random function
+                    Random r = new Random();
+                    int Low = 0;
+                    int High = 3;
+                    int value = r.nextInt(High - Low) + Low; //0 inclusive to 3 exclusive
+                    System.out.println("Uddhav: " + value);
+                    opponentHand = Hand.fromInt(value);
+
+                    //do the error reporting
+                    ErrorReporter.report(new IOException("Connection Error!"));
+
+                } else {
+
+                    // do something wih the result
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(
+                            new BufferedInputStream(response.body().byteStream())));
+                    String str = reader.readLine();
+
+                    Log.i(Thread.currentThread().getName(), str);
+
+                    while (!TextUtils.isEmpty(str)) {
+                        opponentHand = Hand.fromInt(Integer.valueOf(str.trim()));
+                        str = reader.readLine();
+                    }
+
+                }
+            }
+        });
+    }
+	
+	
+
+                } 
+
+RockPaperScissorsFragment.java, 73 to 84:  < wrote the below code to randomly provide response and submit error reports to server if there happen unsuccessful connection. >
+			if (!response.isSuccessful()) {
+                    //connection failed
+                    //provide random response {0, 1, 2} yourself using random function
+                    Random r = new Random();
+                    int Low = 0;
+                    int High = 3;
+                    int value = r.nextInt(High - Low) + Low; //0 inclusive to 3 exclusive
+                    System.out.println("Uddhav: " + value);
+                    opponentHand = Hand.fromInt(value);
+
+                    //do the error reporting
+                    ErrorReporter.report(new IOException("Connection Error!"));
+
+                }
+				
+rockpaperscissors_activity.xml, 4:  <     android:name="com.upgautam.uddhav.rpsgame.uicontrollers.fragment.RockPaperScissorsFragment">
+rockpaperscissors_activity.xml, 7:  <     tools:layout="@layout/rockpaperscissors_fragment" >
+
+
+rockpaperscissors_fragment, all file < totally modified as below to remove nested weights property and do manything as explained in attached pdf file >
+
+strings.xml, 2: <    <string name="app_name">RPS Game</string> >
+strings.xml, 3: <    <string name="title_activity_navigation_drawer">RPS Game</string> >
+
+dimens.xml 2 and 3 < added two lines "<dimen name="activity_vertical_margin">4dp</dimen>
+    <dimen name="activity_horizontal_margin">4dp</dimen>"  >
+	
+	
+
+
+	
+
+	
+
