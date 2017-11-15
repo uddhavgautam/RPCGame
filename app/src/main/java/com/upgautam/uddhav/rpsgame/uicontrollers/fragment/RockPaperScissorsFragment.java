@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.upgautam.uddhav.rpsgame.R;
+import com.upgautam.uddhav.rpsgame.uicontrollers.ErrorReporter;
 import com.upgautam.uddhav.rpsgame.uicontrollers.Hand;
 import com.upgautam.uddhav.rpsgame.uicontrollers.HandButton;
 
@@ -42,7 +43,7 @@ public class RockPaperScissorsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.rockpaperscissors_fragment, container, false);
+        View fragmentView = (View) inflater.inflate(R.layout.rockpaperscissors_fragment, container, false);
         rockButton = fragmentView.findViewById(R.id.rock_button);
         scissorsButton = fragmentView.findViewById(R.id.scissors_button);
         paperButton = fragmentView.findViewById(R.id.paper_button);
@@ -78,6 +79,9 @@ public class RockPaperScissorsFragment extends Fragment {
                     int value = r.nextInt(High - Low) + Low; //0 inclusive to 3 exclusive
                     System.out.println("Uddhav: " + value);
                     opponentHand = Hand.fromInt(value);
+
+                    //do the error reporting
+                    ErrorReporter.report(new IOException("Connection Error!"));
 
                 } else {
 
